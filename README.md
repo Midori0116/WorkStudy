@@ -16,3 +16,4 @@ pg_ctl -D "C:\xxx\pgsql\data" status
         \pgsql\data　postgresql.conf　のポート番号を確認  
         
 psql -h localhost -p ポート番号 -U spa -d spadb           
+
