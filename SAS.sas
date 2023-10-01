@@ -1,6 +1,38 @@
+/*　SQL内項目リネーム  */
+/* 重複する列を指定する場合は「データセット.列名」で指定 */
+select 
+	A.id, 
+	A.sex as A_sex, /* 同じ名前の列は「as」で別名を指定 */
+	B.sex as B_sex, 
+	B.age 
+from A 
+	left join B 
+	on A.id= B.id
+
+/*　LEFT JOINと条件指定の場合  */
+/* https://www.youtube.com/watch?v=6_XTzoSUazo */
+/*　and */
+proc sql;
+select * from a
+left join b 
+on a.id=b.id
+and b.key =10; /*  本物のleftjoin */
+quit;
+
+/* where */
+proc sql;
+select * from a
+left join b 
+on a.id=b.id
+/* ↑が先に実行された　↓上の結果をもっとにWHERE */
+WHERE b.key =10;
+quit;
+
+
+
+
 
 /*  名寄せ */
-
 /*   論文：  https://www.sas.com/content/dam/SAS/ja_jp/doc/event/sas-user-groups/usergroups11-b-10.pdf   */
 
 /*  例6 */
